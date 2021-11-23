@@ -2,7 +2,7 @@ from os import name
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models.fields.related import ManyToManyField, OneToOneField
-user = get_user_model
+user = get_user_model()
 
 
 # Create your models here.
@@ -28,6 +28,7 @@ class Posts(models.Model):
     thumnail = models.ImageField()
     author = models.ForeignKey(Author, on_delete= models.CASCADE)
     category = ManyToManyField(Category)
+    featured = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
