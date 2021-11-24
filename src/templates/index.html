@@ -62,9 +62,11 @@
             </div>
             
           </div>
-          {% if forloop.first or forloop.last %}
+          {% if obj.thumnail %}
+          {% if not forloop.first and not forloop.last %}
           <div class="image col-lg-5"><img src="{{ obj.thumnail.url }}" alt="...">
           </div>
+          {% endif %}
           {% endif %}
         </div>
         

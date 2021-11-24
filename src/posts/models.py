@@ -25,7 +25,7 @@ class Posts(models.Model):
     overview = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     commentCount = models.IntegerField(default=0)
-    thumnail = models.ImageField()
+    thumnail = models.ImageField(blank=True)
     author = models.ForeignKey(Author, on_delete= models.CASCADE)
     category = ManyToManyField(Category)
     featured = models.BooleanField(default=True)
