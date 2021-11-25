@@ -14,14 +14,14 @@ class Author(models.Model):
         return self.user.username
 
 class Category(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=10)
 
     def __str__(self):
         return self.title
 
 
 class Posts(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=50)
     overview = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     commentCount = models.IntegerField(default=0)
